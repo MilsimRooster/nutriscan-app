@@ -75,13 +75,12 @@ def scan_barcode(image):
     if not db:
         return None
     try:
-        # Preprocess image: resize to 800px width, convert to grayscale
+        # Preprocess: resize and grayscale
         width = 800
         aspect = image.shape[1] / image.shape[0]
         height = int(width / aspect)
         image_resized = cv2.resize(image, (width, height))
         image_gray = cv2.cvtColor(image_resized, cv2.COLOR_BGR2GRAY)
-        
         barcodes = pyzbar.decode(image_gray)
         if not barcodes:
             logging.info("No barcodes found in image")
@@ -139,26 +138,8 @@ def main():
     """Main Streamlit app."""
     st.title("NutriScan: Barcode Scanner")
     st.write("Scan food barcodes with your iPhone photos! Powered by Open Food Facts.")
-    st.write("Note: Adjust sliders based on scan results or label values (e.g., cornflakes: 357 cal, 85.7g carbs).")
+    st.write("Note: Adjust sliders based on scan results or label values.")
 
-    # Authentication
-    if "logged_in" not in st.session_state:
-        st.session_state.logged_in = False
-
-    if not st.session_state.logged_in:
-        st.subheader("Login")
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
-        if st.button("Login"):
-            if username == "user" and password == "pass":
-                st.session_state.logged_in = True
-                st.success("Logged in!")
-                st.rerun()
-            else:
-                st.error("Invalid username or password")
-        return
-
-    # Main app
     st.subheader("Nutritional Preferences")
     db = load_nutrition_db()
     avg_nutrients = {k: np.mean([item.get(k, 0) for item in db["barcodes"].values()]) for k in ["calories", "protein", "fat", "carbs", "sugar", "fiber"]}

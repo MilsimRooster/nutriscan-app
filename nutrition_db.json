@@ -1,0 +1,50 @@
+{
+  "barcodes": {
+    "0888109150020": {
+      "name": "Frosted mini donuts",
+      "calories": 491,
+      "fat": 29.8,
+      "carbs": 56.1,
+      "protein": 3.51
+    },
+    "0070038671305": {
+      "name": "Classic Potato Chips",
+      "calories": 536,
+      "fat": 35.7,
+      "carbs": 53.6,
+      "protein": 7.14
+    },
+    "0034856108184": {
+      "name": "Welch's Mixed Fruit Fruit Snacks",
+      "calories": 308,
+      "fat": 0,
+      "carbs": 74.9,
+      "protein": 4.41
+    },
+    "0024300031113": {
+      "name": "Sunbelt Bakery Fudge Dipped Chocolate Chip Chewy Granola Bars",
+      "calories": 500,
+      "fat": 21.9,
+      "carbs": 65.6,
+      "protein": 6.25
+    },
+    "0038000001208": {
+      "name": "Cereal",
+      "calories": 357,
+      "fat": 0,
+      "carbs": 85.7,
+      "protein": 7.14,
+      "sugar": 0,
+      "fiber": 0
+    },
+    "0044000000578": {
+      "name": "Original saltine crackers",
+      "calories": 438,
+      "fat": 9.38,
+      "carbs": 75,
+      "protein": 6.25,
+      "sugar": 0,
+      "fiber": 0
+    }
+  }
+}

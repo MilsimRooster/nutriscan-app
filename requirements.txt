@@ -1,0 +1,7 @@
+streamlit
+pyzbar
+opencv-python-headless
+numpy
+requests
+pandas
+matplotlib
